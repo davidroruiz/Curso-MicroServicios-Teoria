@@ -1,0 +1,60 @@
+Introduccion
+
+Maven es un framework de gestion de proyectos de software. Con Maven vamos a poder compilar, empaquetar, generar documentacion, pasar los test y preparar las builds.
+Maven estandariza un ciclo de vida para los proyectos, proporcionando un marco que permita la reutilizacion facil de todos los componentes definidos bajo la  estructura de Maven.
+Los componentes de Maven se ubican en repositorios desde donde los proyectos Maven pueden accederlos.
+
+Caracteristicas
+
+-Creacion sencilla y agil de un nuevo proyecto
+-Estandarizacion de la estructura de un proyecto
+-Potente mecanismo de gestion de las dependencias y la resolucion de dependencias transitivas
+-Gestion simultanea de varios proyectos
+-Repositorio de librerias Open Source actualizado
+-Dispone de multitud de plugins y de la posibilidad de la creacion de otros que necesitemos
+-Acceso inmediato a nuevas funcionalidades
+-Integracion con tareas ANT => https://es.wikibooks.org/wiki/Manual_b%C3%A1sico_de_ANT
+-Generacion de diversos empaquetos de proyecto: JAR, War...
+-Generacion de un portal Web del proyecto
+-Gestion de releases y publicaciones
+
+Arquetipos
+
+El primer comando a conocer es Archetype, ya que permite la creacion de un proyecto Maven siguiendo una plantilla, la cual habra que selecionar ademas de indicar otros parametros en una serie de pasos
+-Eleccion del arquetipo
+-Version del arquetipo
+-GroupId
+-ArtifactId
+-Version
+-Package
+
+Ciclo de vida
+
+Existen tres ciclos de vida en Maven:
+-Default
+-Clean: Que se divide en tres fases:
+  -pre-clean: Se ejecutan los procesos necesarios antes de poder limpiar el proyecto.
+  -clean: Elimina todos losficheros generados desde la anterior construccion, borra el contenido de /target
+  -post-clean: Se ejecutan los procesos necesarios para finalizar la limpiea del proyecto
+-Site:
+  -pre-site: Ejecuta los procesos necesarios para el proyecto generado
+  -site: Genera la documentacion del proyecto
+  -post-size:Ejecuta los procesos necesarios para finalizar la generacion y empezar con el desarrollo
+  -site-deploy: Genera la documentacion para la especificacion del sitio web
+  
+Dependencias
+
+Las dependencias pueden ser necesarias unicamente en unafase del ciclo de vida, para lo cual se permitela definicion del scope o ambito
+Siendo los posibles valores del scope:
+-test
+-compile
+-provided
+-runtime
+-system
+-import
+
+Herencias del POM
+
+Se trata de establecer una relacion entre varios proyectos, para obtener dos ventajas:
+-Unificar configuraciones repetidas enel proyecto padre
+-Manejar conjuntamente todos los proyectos hijos
