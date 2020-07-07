@@ -1,0 +1,56 @@
+Introduccion
+
+Git es una herramienta para facilitar el desarrollo de Software tanto entre miembros como el trabajo de forma individual. Permite llevar un seguimiento de la evolucion de los cambios y realiza un versionado del Software. 
+
+Configuracion
+
+Git usa comandos para realizar las configuraciones, los mas comunes son:
+-user.name: Nombre de usuario que ira en los commits
+-user.email:Mail de usuario que ira en los commits
+-core.editor: Posibilidad de alteral el editor de texto
+-commit.template: Plantilla para los commits
+-user.signingkey: La firma de los commits
+-core.excludefile: Una lista de extensiones para excluir ficheros
+-color.ui: Cambar el color segun el estado del fichero
+-merge.tool:Cambiar a modo de resolucion de conflictos/fusiones
+-core.autocrif: Como controlar el retorno de carro
+
+Ciclo de vida de ficheros locales
+
+Hay dos estados principales:
+
+-Untracked: Sin seguimiento y no gestionados por GIT
+-Tracked: En seguimiento y gestionado por GIT. Y dentro del mismo existen subestados:
+  -Unmodified: Fichero ya persistido alguna vez que esta sincronizado y en seguimiento
+  -Modified: Fichero ya persistido alguna vez que ha sido modificado
+  -Staged: Fichero marcado para almacenar sus cambios en el repositorio en el siguiente commit
+  
+Comandos Basicos
+
+-Status: Permite ver el estado de los ficheros
+-Add: Para que los ficheros sean gestionados por GIT
+-Commit: Es la forma de almacenar cambios en un repositorio
+-Log: Visualiza el historial de cambios que se han producido en un respositorio local
+-Checkout: Comando que permite posicionarse en una rama
+-Show: Vsualiza el contenido de un commit
+-Diff: Comrpueba los cambios que se han producido
+-Reset: Elimina commit en una rama
+-Rm: Para acar ficheros del Staging Area
+-Mv: Renombrado de ficheros en GIT
+
+Comandos Avanzados
+
+-rev-parse: Permite conocer cual es el SHA-1 del ultimo commit de una rama
+-amend: Permite añadir mas cambios al ultimo commit
+-clean: Permite limpiar el Working Area
+-revert: Permite deshacer un commit
+-rebase: PAra fusionar dos ramas que van en paralelo,no haciendo un merge sino incluyendo los commit de una rama en la otra
+
+Fujos en GIT
+
+-Forking Workflow: Es un flujo basado en Forks. Permite que el usuario del repositorio valide cada una de las aportaciones.
+-Centralized Workflow: El procedimento, constaria de un branch por desarrollador en Local. REaliza commit en Local y luego la sube haciendo un Push
+-Git flow:
+  -Development: Ira teniendo los commit necesarios para completar la siguiente verison a desarrollar
+  -Master: Tendra las versiones con los codigos estables
+-Lab: Generacion de flujos: Añade procedimientos especificos dedicados a ayudar con el desarrollo.
