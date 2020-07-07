@@ -1,0 +1,57 @@
+Introduccion
+
+Framework orientado a la configuracion y construccion de proyectos de la familia spring basado en Convention-Over-Configuration, por lo que minimiza la cantidad de codigode configuracion de las aplicaciones.
+
+Afecta principalmente a dos aspectos de los proyectos:
+-Configuracion de dependencias: Sigue empleando Maven o Gradle para configurar las dependencias del proyecto, abstrae las versiones de las Apis y proporciona un conjunto de librerias que ya estan probadas trabajando juntas.
+-Configuraciondelas Apis:Viene con un diseño de preconfiguracion que se puede modificar o añadir dependencias u otras caracteristicas.
+
+Ademass proporciona otras herramientas como la consola Spring Boot CLI y Actuator.
+
+Dependencia Spring Boot Dependencies
+
+Esta dependencia permite hacer el trabajo sucio para manejar el ciclo de vida de un proyecto springnormal, pero normalmente se precisaran otras dependencias, para ello Spring Boot ofrecelos Starters.
+@SpringBootApplication
+Esta anotacion es la suma de tres:
+-@Configuration
+-@ComponentScan
+-@EnableAtoConfiguration
+
+Uso de plantillas
+
+Los proyectos Spring Boot Web vienen configuradospara emplear plantillas, basta con añadir el starteer del motor deseado y definir las plantillasenla capeta src/main/resources/templates. Entre los mas importantes son:
+
+-Thymeleaf: Motor de plantillas que se basa en la instrumentaizacion de html con atributos obtenidos dl esquema th
+-JSP
+-Recursos estaticos: HTML, js, css...Se debe incluir en las siguientes rutas:
+  -src/main/resources/META-INF/resources
+  -src/main/resources/resources
+  -src/main/resources/static
+  -src/main/resources/public
+-Webjars: Maven Repository
+
+Recopilacion de metricas
+
+La API de Actuator nos permite recoger informacion del contexto de Spring en ejecucion, como:
+-Que beans se han configurado
+-Que configuracion automatica se ha establecido
+-Que esta disponible en la aplicacion ya sea variables de entorno, propiedades del sistema...
+-Estado actual de los subprocesos
+-Rastreo de solicitudes HTTP
+-Metricas relacionadas con el uso de memoria
+https://openwebinars.net/blog/como-anadir-spring-boot-actuator-tu-proyecto/
+
+Starters
+
+Son dependencias ya preparadas por Spring, para dotar del conjunto de libretias necesarias para obtener una funcionalidad sin que existan conflictos entre versiones distintas
+
+Errores
+
+Por defecto Spring Boot proporciona una pagina para representar los errores que se producen en las aplicaciones llamada WhiteLabel
+
+Seguridad de aplicaciones
+
+Spring-boot-starter-security
+https://www.baeldung.com/spring-boot-security-autoconfiguration
+Hace que la aplicacion sea segura,nada es accesible
+Se creara un usuario por defecto user cuyo password se genera cada vez que se arranque la aplicacion y se pintara en el log
