@@ -1,0 +1,29 @@
+Introduccion Microservicios
+Son pequeños servicios autonomos que se comunican con APIs ligeros, tipicamente con APIs REST. El termino autonomo es acompañado debido a que el microservicio va a realizar su funcionalidad completamente desde el API hasta la bse de datos.
+Ventajas:
+-Son ligeros con poco codigo
+-Permite aprovechar de forma mas eficiente los recursos
+-Permite emplear tecnologias distintas sin que esas ventajas puedan lastrar otros componentes
+-Permiten un despliegue mas rapido y un arranque desde produccion ya que las evoluciones de un microservicio son independientes y no se afectan entre sí.
+Desventajas
+-Exigen mayor esfuerzo en el despliegue y control de versionado.
+
+Arquitectura de microservicios
+La principal arquitectura de un microservicio es la llamada arquitectura distribuidad, en la que se pueden producir problemas propios como 
+ -Monitorizacion de la arquitectura
+ -Configuracion de los microservicios
+ -Descubrimiento de microservicios
+ -Deteccion de caida de microservicios
+ -Balanceo de carga
+ -Seguridad centralizada
+ -Logs centralizados
+ Igualmente, estos problemas los podemos evitar con las siguientes herramientas:
+ -Configuracion distribuida: Un servidor de configuracion que permite centralizar las configuraciones con todos los microservicios
+ -Registro y autoreconocimiento de servicios: Permite registrar instancias de servicios y exponerlos de forma integrada.
+ -Enrutado: Permite definir rutas dentro de la arquitectura para acceder
+ -Balanceo de carga: Obtiene las instacionas del Servidor de Registro y Descubrimiento para el cliente eliga cual de ellas desea usar.
+ -Control de ruptura de comunicacion con los servicios: Evita la caida de todos los microservicios cuando uno de ellos da problemas
+ -Mensajeria distribuida: Permite emplear un bus de mensajeria para desacoplar los microservicios entre si.
+ -Gestion centralizada de Logs: Permite controlar el estado de todas las instancias de todos los microservicios de una misma aplicacion.
+ -Monitorizacion: Permite visualizar de forma centralizada el estado de todas las instancias de todos los microservicios.
+ -Servidor de seguridad centralizado: Permite gestionar el acceso a los recursos de forma centralizada.
