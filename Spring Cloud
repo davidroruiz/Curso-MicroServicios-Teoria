@@ -1,0 +1,33 @@
+Introduccion
+
+https://www.baeldung.com/spring-cloud-bootstrapping#:~:text=Spring%20Cloud%20is%20a%20framework%20for%20building%20robust%20cloud%20applications.&text=Applications%20that%20run%20with%20microservices,one%20problem%20at%20a%20time.
+
+Spring Cloud es un marco para construir aplicaciones robustas en la nube. El marco facilita el desarrollo de aplicaciones al proporcionar soluciones a muchos de los problemas comunes que se enfrentan al pasar a un entorno distribuido.
+
+Las aplicaciones que se ejecutan con la arquitectura de microservicios tienen como objetivo simplificar el desarrollo, la implementación y el mantenimiento. La naturaleza descompuesta de la aplicación permite a los desarrolladores centrarse en un problema a la vez. Se pueden introducir mejoras sin afectar otras partes de un sistema.
+
+Por otro lado, surgen diferentes desafíos cuando adoptamos un enfoque de microservicio:
+
+Configuración de externalización para que sea flexible y no requiera la reconstrucción del servicio en el cambio
+Descubrimiento de servicio
+Ocultar la complejidad de los servicios implementados en diferentes hosts
+
+Eureka: registro y descubrimiento
+
+Permite gestionar todas las instancias disponibles de los microservicios. Enviaran su estado al servidor.Cuando estos mensajes no sean correctos, el servidor registrara la instancia del microservicio. Es normal el caso en el que los clientes consuman otros microservicios
+https://www.paradigmadigital.com/dev/el-microservicio-eureka-a-fondo-12/
+
+Ribbon: balanceo de carga en cliente
+
+El cliente empleara el API de REst Template que se proxeara con el balanceador de carga Ribbon para pode emplear el servicio de localizacion de Eureka para consumer el servicio.
+https://www.paradigmadigital.com/dev/ribbon-balanceador-carga-spring-cloud-netflix-13/
+
+Feign: simplificacion de clientes
+
+Feign abstrae el uso del API de RestTemplate para consultar los microsrevicios, encapsulandolo todo con la definicion de una interface.Para activa su uso, lo primero sera añadir la dependencia con Maven.
+https://blog.bi-geek.com/arquitecturas-basadas-en-microservicios-spring-cloud-feign/
+
+Zuul: servidor de enrutado
+
+Permite definir paths y asociados a los microservicios de la arquitectura , sera por tanto el componente expuesto de toda la arquitectura. Se proporciona como servidor de enrutado, que se acopla perfectamente con Eureka, permitiendo definir rutas que se enlacen directamente con los microservicios.
+https://blog.bi-geek.com/arquitecturas-basadas-en-microservicios-spring-cloud-netflix-zuul/
